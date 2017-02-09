@@ -1,5 +1,7 @@
 package com.mpc.scalats
 
+import java.sql.Timestamp
+
 import com.mpc.scalats.configuration.Config
 import com.mpc.scalats.core.TypeScriptGenerator
 
@@ -9,14 +11,14 @@ import com.mpc.scalats.core.TypeScriptGenerator
 
 case class Foo[T, Q](a : T, b: List[Q])
 
-case class Bar(b: Foo[String, String], c:List[Foo[Int, String]])
+case class Bar(b: Foo[String, String], c:Set[Foo[Int, Timestamp]])
 
 case class Xyz(bars: Option[List[Option[Bar]]])
 
 object GenericsExample {
 
   def main(args: Array[String]) {
-    TypeScriptGenerator.generateFromClassNames(List("com.mpc.scalats.Xyz"), Console.out)(Config())
+    TypeScriptGenerator.generateFromClassNames(List("com.mpc.scalats.Xyz"))(Config())
   }
 
 }
