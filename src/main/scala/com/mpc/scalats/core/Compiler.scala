@@ -24,7 +24,7 @@ object Compiler {
           scalaMember.name,
           compileTypeRef(scalaMember.typeRef, inInterfaceContext = true)
         )
-      },
+      } reverse,
       typeParams = scalaClass.params
     )
   }
@@ -39,7 +39,7 @@ object Compiler {
             compileTypeRef(scalaMember.typeRef, inInterfaceContext = false),
             Some(TypeScriptModel.AccessModifier.Public)
           )
-        }
+        } reverse
       ),
       typeParams = scalaClass.params
     )

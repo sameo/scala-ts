@@ -18,7 +18,7 @@ case class Xyz(bars: Option[List[Option[Bar]]])
 object GenericsExample {
 
   def main(args: Array[String]) {
-    TypeScriptGenerator.generateFromClassNames(List("com.mpc.scalats.Xyz"))(Config())
+    TypeScriptGenerator.generateFromClassNames(List("com.mpc.scalats.Xyz"))(Config(emitClasses=true))
   }
 
 }
